@@ -47,7 +47,7 @@ cd $pr_path/project
 /usr/bin/cp $pr_path/project/target/absence-control.war $tomcat_dir/tomcat/webapps/
 /usr/bin/chown tomcat:tomcat -R $tomcat_dir/tomcat
 /usr/sbin/iptables -I INPUT -p tcp --dport 8080 -j ACCEPT
-/usr/sbin/iptables -I OUTPUT -p tcp --dport 8080 -j ACCEPT
+/usr/sbin/iptables -I OUTPUT -p tcp --sport 8080 -j ACCEPT
 /usr/bin/systemctl daemon-reload
 /usr/bin/systemctl enable tomcat
 /usr/bin/systemctl start tomcat
